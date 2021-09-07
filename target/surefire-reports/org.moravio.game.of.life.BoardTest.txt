@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.moravio.game.of.life.BoardTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.moravio.game.of.life.BoardTest
