@@ -3,12 +3,8 @@ package org.moravio.game.of.life;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
 public class BoardTest {
     Board inputBoard = new Board(3, 3);
     Board outputBoard = new Board(3, 3);
