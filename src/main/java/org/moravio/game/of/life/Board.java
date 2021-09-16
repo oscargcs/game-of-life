@@ -71,14 +71,22 @@ public class Board {
         return outputBoard;
     }
 
-    public boolean equalBoards(Board outputBoard) {
-        for (int x = 0; x < this.width; x++) {
-            for (int y = 0; y < this.height; y++) {
-                if (this.board[x][y] != outputBoard.getBoard()[x][y])
-                    return false;
+    public boolean equals(Object anObject) {
+        if (anObject instanceof Board) {
+            Board board = (Board) anObject;
+
+            for (int x = 0; x < this.width; x++) {
+                for (int y = 0; y < this.height; y++) {
+                    if (this.board[x][y] != board.getBoard()[x][y]) {
+                        return false;
+                    }
+                }
+
             }
+            return true;
+
         }
-        return true;
+        return false;
     }
 
     public void printBoard() {

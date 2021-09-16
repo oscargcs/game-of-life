@@ -95,7 +95,7 @@ public class BoardTest {
         outputBoard.setAlive(1, 1);
         outputBoard.setAlive(1, 2);
 
-        assertTrue(outputBoard.equalBoards(inputBoard.outputStateAllCells()));
+        assertTrue(outputBoard.equals(inputBoard.outputStateAllCells()));
 
     }
 
@@ -112,8 +112,7 @@ public class BoardTest {
         outputBoard.setAlive(1, 0);
         outputBoard.setAlive(1, 1);
 
-        assertTrue(outputBoard.equalBoards(inputBoard.outputStateAllCells()));
-
+        assertTrue(outputBoard.equals(inputBoard.outputStateAllCells()));
     }
 
 }
