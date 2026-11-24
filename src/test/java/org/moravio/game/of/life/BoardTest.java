@@ -1,7 +1,6 @@
 package org.moravio.game.of.life;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -11,8 +10,8 @@ public class BoardTest {
 
     @Test
     public void countAliveNeighbours() {
-        for (int i = 0; i < inputBoard.width; i++) {
-            for (int j = 0; j < inputBoard.height; j++) {
+        for (int i = 0; i < inputBoard.getWidth(); i++) {
+            for (int j = 0; j < inputBoard.getHeight(); j++) {
                 inputBoard.setAlive(i, j);
             }
         }
@@ -83,9 +82,9 @@ public class BoardTest {
     }
 
     @Test
-    public void outputStateAllCellsOscilator() {
+    public void outputStateAllCellsOscillator() {
         int j = 1;
-        for (int i = 0; i < inputBoard.width; i++) {
+        for (int i = 0; i < inputBoard.getWidth(); i++) {
 
             inputBoard.setAlive(i, j);
 
@@ -95,8 +94,7 @@ public class BoardTest {
         outputBoard.setAlive(1, 1);
         outputBoard.setAlive(1, 2);
 
-        assertTrue(outputBoard.equals(inputBoard.outputStateAllCells()));
-
+        assertEquals(inputBoard.outputStateAllCells(), outputBoard);
     }
 
     @Test
@@ -112,7 +110,7 @@ public class BoardTest {
         outputBoard.setAlive(1, 0);
         outputBoard.setAlive(1, 1);
 
-        assertTrue(outputBoard.equals(inputBoard.outputStateAllCells()));
+        assertEquals(inputBoard.outputStateAllCells(), outputBoard);
     }
 
 }

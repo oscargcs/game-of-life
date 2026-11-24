@@ -2,9 +2,9 @@ package org.moravio.game.of.life;
 
 public class Board {
 
-    int width;
-    int height;
-    int[][] board;
+    private final int width;
+    private final int height;
+    private final int[][] board;
 
     public Board(int width, int height) {
         this.width = width;
@@ -27,7 +27,6 @@ public class Board {
     public void setAlive(int x, int y) {
         this.board[x][y] = 1;
     }
-
 
     public int countAliveNeighbours(int x, int y) {
         int count = 0;
@@ -87,20 +86,5 @@ public class Board {
 
         }
         return false;
-    }
-
-    public void printBoard() {
-        for (int y = 0; y < height; y++) {
-            String line = "|";
-            for (int x = 0; x < width; x++) {
-                if (this.board[x][y] == 0) {
-                    line += "0";
-                } else {
-                    line += "1";
-                }
-            }
-            line += "|";
-            System.out.println(line);
-        }
     }
 }
