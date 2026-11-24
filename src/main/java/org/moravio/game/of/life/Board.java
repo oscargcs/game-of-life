@@ -28,6 +28,8 @@ public class Board {
         this.board[x][y] = 1;
     }
 
+    public boolean isAlive(int x, int y) { return board[x][y] == 1;}
+
     public int countAliveNeighbours(int x, int y) {
         int count = 0;
 
@@ -35,7 +37,7 @@ public class Board {
             if (a >= 0 && a <= this.width - 1) {
                 for (int b = y - 1; b <= y + 1; b++) {
                     if (b >= 0 && b <= this.height - 1) {
-                        if (this.board[a][b] == 1 && !((a == x) && (b == y))) {
+                        if (this.isAlive(a,b) && !((a == x) && (b == y))) {
                             count++;
                         }
                     }
@@ -44,30 +46,6 @@ public class Board {
         }
 
         return count;
-    }
-
-
-    public int outputStateOneCell(int x, int y) {
-        int nextState = 0;
-        int aliveNeighbours = countAliveNeighbours(x, y);
-
-        if (this.board[x][y] == 1 && (aliveNeighbours == 2 || aliveNeighbours == 3) || (this.board[x][y] == 0 && aliveNeighbours == 3)) {
-            nextState = 1;
-        }
-
-        return nextState;
-    }
-
-    public Board outputStateAllCells() {
-        Board outputBoard = new Board(this.width, this.height);
-
-        for (int x = 0; x < this.width; x++) {
-            for (int y = 0; y < this.height; y++) {
-                int state = outputStateOneCell(x, y);
-                outputBoard.getBoard()[x][y] = state;
-            }
-        }
-        return outputBoard;
     }
 
     public boolean equals(Object anObject) {
@@ -80,10 +58,8 @@ public class Board {
                         return false;
                     }
                 }
-
             }
             return true;
-
         }
         return false;
     }
