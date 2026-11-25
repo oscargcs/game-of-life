@@ -6,7 +6,7 @@ public class BoardPrinter {
             StringBuilder line = new StringBuilder("|");
 
             for (int x = 0; x < board.getWidth(); x++) {
-                line.append(board.getBoard()[x][y] == 0 ? "0" : "1");
+                line.append(board.getBoard()[x][y] ? "1" : "0");
             }
 
             line.append("|");

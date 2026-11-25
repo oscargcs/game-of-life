@@ -13,7 +13,7 @@ public class Game {
 
         for (int x = 0; x < board.getWidth(); x++) {
             for (int y = 0; y < board.getHeight(); y++) {
-                if (rules.oneCellNextState(board, x, y)==1) {
+                if (rules.oneCellNextState(board, x, y)) {
                     nextBoard.setAlive(x, y);
                 }
             }

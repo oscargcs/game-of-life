@@ -4,12 +4,12 @@ public class Board {
 
     private final int width;
     private final int height;
-    private final int[][] board;
+    private final boolean[][] board;
 
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
-        this.board = new int[width][height];
+        this.board = new boolean[width][height];
     }
 
     public int getWidth() {
@@ -20,15 +20,15 @@ public class Board {
         return height;
     }
 
-    public int[][] getBoard() {
+    public boolean[][] getBoard() {
         return board;
     }
 
     public void setAlive(int x, int y) {
-        this.board[x][y] = 1;
+        this.board[x][y] = true;
     }
 
-    public boolean isAlive(int x, int y) { return board[x][y] == 1;}
+    public boolean isAlive(int x, int y) { return board[x][y];}
 
     public int countAliveNeighbours(int x, int y) {
         int count = 0;
